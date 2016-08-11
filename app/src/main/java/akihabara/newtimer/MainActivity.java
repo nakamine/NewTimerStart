@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     int nFun =0;									//int(整数)型の変数 "nFun" を宣言
     Long byou;										//Long(数値)型の変数 "byou" を宣言
     MyCountDownTimer taimaa;				//MyCountDownTimer型の変数 "taimaa" を宣言
-
+    int i = 0;
     ImageView iv00;
     ImageView iv01;
     ImageView iv02;
@@ -49,12 +49,6 @@ public class MainActivity extends AppCompatActivity {
         //taimaa = new MyCountDownTimer(nFun * 60 * 1000, 1000);	//実行用
 
         taimaa.start();        										// カウントダウン開始
-        iv00.setImageResource(R.drawable.kiri1);
-        iv01.setImageResource(R.drawable.kiri2);
-        iv02.setImageResource(R.drawable.honoka1);
-        iv03.setImageResource(R.drawable.ikuno1);
-        iv04.setImageResource(R.drawable.ikuno2);
-        iv05.setImageResource(R.drawable.tougenkyo);
     }
 
     public void onClickCancel(View v) {		     			//[Cansel]ボタンタップ時の動作を定義
@@ -78,7 +72,18 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onTick(long millisUntilFinished) {            // インターバル(countDownInterval)毎に実行される処理を定義
             byou = millisUntilFinished/1000;
-            nanPun.setText(Long.toString(byou/60) + ":" + Long.toString(byou%60));
+//            nanPun.setText(Long.toString(byou/60) + ":" + Long.toString(byou%60));
+            nanPun.setText(Long.toString(byou/60) + ":" + Long.toString(byou%60) + " " + i);
+
+            if (i == 0) iv00.setImageResource(R.drawable.kiri1);
+            if (i == 1) iv01.setImageResource(R.drawable.ikuno1);
+            if (i == 2) iv02.setImageResource(R.drawable.honoka1);
+            if (i == 3) iv03.setImageResource(R.drawable.droimerei);
+            if (i == 4) iv04.setImageResource(R.drawable.tougenkyo);
+            if (i == 5) iv05.setImageResource(R.drawable.kiri2);
+
+            i = i + 1;
+            if (i == 7) { i = 0; }
         }
     }																						// "MyCountDownTime" メソッド の動作を定義:終了
 }
