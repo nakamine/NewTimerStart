@@ -7,6 +7,7 @@ package akihabara.newtimer;
         import android.support.v7.app.AppCompatActivity;
         import android.view.View;
         import android.widget.EditText;
+        import android.widget.ImageView;
         import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,12 @@ public class MainActivity extends AppCompatActivity {
     Long byou;										//Long(数値)型の変数 "byou" を宣言
     MyCountDownTimer taimaa;				//MyCountDownTimer型の変数 "taimaa" を宣言
 
+    ImageView iv00;
+    ImageView iv01;
+    ImageView iv02;
+    ImageView iv03;
+    ImageView iv04;
+    ImageView iv05;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {		//アプリ起動時の動作を定義
@@ -24,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);						// activity_mainレイアウトを画面に表示
 
         nanPun = (EditText) findViewById(R.id.editText1);			// EditText型の変数 "nanPun" をレイアウト上のeditText1に紐付け
+
+        iv00 = (ImageView)findViewById(R.id.imageView);
+        iv01 = (ImageView)findViewById(R.id.imageView2);
+        iv02 = (ImageView)findViewById(R.id.imageView3);
+        iv03 = (ImageView)findViewById(R.id.imageView4);
+        iv04 = (ImageView)findViewById(R.id.imageView5);
+        iv05 = (ImageView)findViewById(R.id.imageView6);
+
     }
 
     public void onClickStart(View v) {						//[Start]ボタンタップ時の動作を定義
@@ -34,6 +49,12 @@ public class MainActivity extends AppCompatActivity {
         //taimaa = new MyCountDownTimer(nFun * 60 * 1000, 1000);	//実行用
 
         taimaa.start();        										// カウントダウン開始
+        iv00.setImageResource(R.drawable.kiri1);
+        iv01.setImageResource(R.drawable.kiri2);
+        iv02.setImageResource(R.drawable.honoka1);
+        iv03.setImageResource(R.drawable.ikuno1);
+        iv04.setImageResource(R.drawable.ikuno2);
+        iv05.setImageResource(R.drawable.tougenkyo);
     }
 
     public void onClickCancel(View v) {		     			//[Cansel]ボタンタップ時の動作を定義
