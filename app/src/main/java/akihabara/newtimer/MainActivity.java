@@ -5,11 +5,13 @@ package akihabara.newtimer;
         import android.app.Activity;
         import android.os.Bundle;
         import android.os.CountDownTimer;
+        import android.support.v7.app.AppCompatActivity;
         import android.view.View;
+        import android.view.Window;
         import android.widget.EditText;
         import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
     //MainActivityクラスの直下は、変数の宣言エリアです。
     EditText nanPun;								//EditText型の変数 "nanPun" を宣言(EditTextは画面から文字を入力するエリア)
     String nFunDayo;								//String(文字列)型の変数 "nFunDayo" を宣言
